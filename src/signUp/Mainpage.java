@@ -1,5 +1,8 @@
 package signUp;
 
+import java.time.Duration;
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -14,15 +17,35 @@ public class Mainpage extends Parameters {
 	@BeforeTest
 	public void setUp() {
 
-//		driver.get(URL);
+		driver.get(URL);
 		driver.manage().window().maximize();
 	}
 
-	@Test(invocationCount = 5, enabled = false)
-	public void testSuite() {
+	@Test
+	public void testOnly() {
+		List<WebElement> listTest = driver.findElements(By.cssSelector(".leftmenu"));
+		System.out.println(listTest);
+		for (int i = 0; i < listTest.size(); i++) {
+			System.out.println(listTest.get(i).getText());
+		}
 
+	}
+
+//	Test Case 1: Open Registration Page
+
+	@Test
+	public void registrationPage() {
 		WebElement registerButton = driver.findElement(By.cssSelector("a[href='register.htm']"));
 		registerButton.click();
+	}
+
+//	Test Case 2: Fill Registration Form with Valid Data
+
+	String usernamelog = usernames[rand.nextInt(usernames.length)] + rand.nextInt(99);
+	String pass = "mohammad123456";
+
+	@Test(invocationCount = 1, enabled = true)
+	public void testSuite() {
 
 		WebElement firstName = driver.findElement(By.id("customer.firstName"));
 		WebElement lastName = driver.findElement(By.id("customer.lastName"));
@@ -37,19 +60,53 @@ public class Mainpage extends Parameters {
 		WebElement rePassword = driver.findElement(By.id("repeatedPassword"));
 		WebElement submitButton = driver.findElement(By.cssSelector("input[value='Register']"));
 
-		firstName.sendKeys("mohammad");
-		lastName.sendKeys("Hussein");
-		addressStreet.sendKeys("qandahar street");
-		addressCity.sendKeys("Riyadh");
-		addressState.sendKeys("Riyadh");
-		zipCode.sendKeys("23568");
-		phoneNumber.sendKeys("+966500937936");
+		firstName.sendKeys(firstNames[rand.nextInt(firstNames.length)]);
+		lastName.sendKeys(lastNames[rand.nextInt(lastNames.length)]);
+		addressStreet.sendKeys(streets[rand.nextInt(streets.length)]);
+		addressCity.sendKeys(cities[rand.nextInt(cities.length)]);
+		addressState.sendKeys(states[rand.nextInt(states.length)]);
+		zipCode.sendKeys(zipCodes[rand.nextInt(zipCodes.length)]);
+		phoneNumber.sendKeys(phoneNumbers[rand.nextInt(phoneNumbers.length)]);
 		custumerssn.sendKeys("123456");
-		username.sendKeys("alnobll");
-		password.sendKeys("123456789@ALNOBl");
-////		rePassword.sendKeys (randomID);
-//		System.out.println(randomID);
+		username.sendKeys(usernamelog);
+		password.sendKeys(pass);
+		rePassword.sendKeys(pass);
+
 		submitButton.submit();
+
+	}
+
+//	Test Case 3: signUp successfully status
+	@Test
+	public void checkstatus() throws InterruptedException {
+		WebElement messageElement = driver.findElement(By.cssSelector("div[id='rightPanel'] p"));
+
+		String expectedText = "Your account was created successfully. You are now logged in";
+
+		boolean containsText = messageElement.getText().contains(expectedText);
+		// Output the result
+		if (containsText == true) {
+			System.out.println("The text is present truthy.");
+		} else {
+			System.out.println("The text is NOT present ");
+		}
+
+	}
+
+//	Test Case 4: Initial Login
+	@Test(priority = 4)
+	public void loginTest() {
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
+		driver.findElement(By.cssSelector("a[href='logout.htm']")).click();
+
+		WebElement username = driver.findElement(By.cssSelector("input[name='username']"));
+		WebElement password = driver.findElement(By.cssSelector("input[name='password']"));
+
+		username.sendKeys(usernamelog);
+		password.sendKeys(pass);
+
+		driver.findElement(By.cssSelector("input[value='Log In']")).click();
+
 	}
 
 }

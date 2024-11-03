@@ -5,8 +5,8 @@
     <classes>
       <class name="signUp.Mainpage">
         <methods>
+          <include name="loginTest"/>
           <include name="setUp"/>
-          <include name="testSuite"/>
         </methods>
       </class> <!-- signUp.Mainpage -->
     </classes>
