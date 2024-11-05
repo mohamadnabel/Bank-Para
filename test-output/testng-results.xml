@@ -1,37 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-03T22:38:51 AST" name="Default suite" finished-at="2024-11-03T22:39:01 AST" duration-ms="9853">
+  <suite started-at="2024-11-05T23:37:46 AST" name="Default suite" finished-at="2024-11-05T23:38:05 AST" duration-ms="18856">
     <groups>
     </groups>
-    <test started-at="2024-11-03T22:38:51 AST" name="Default test" finished-at="2024-11-03T22:39:01 AST" duration-ms="9853">
-      <class name="signUp.Mainpage">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:signUp.Mainpage@69653e16]" started-at="2024-11-03T22:38:51 AST" name="setUp" finished-at="2024-11-03T22:38:55 AST" duration-ms="3479" status="PASS">
+    <test started-at="2024-11-05T23:37:46 AST" name="Default test" finished-at="2024-11-05T23:38:05 AST" duration-ms="18856">
+      <class name="signUp.OpenNewaccount">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:signUp.OpenNewaccount@576f63f6]" started-at="2024-11-05T23:37:46 AST" name="setUp" finished-at="2024-11-05T23:37:49 AST" duration-ms="2881" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="checkstatus()[pri:0, instance:signUp.Mainpage@69653e16]" started-at="2024-11-03T22:38:55 AST" name="checkstatus" finished-at="2024-11-03T22:38:55 AST" duration-ms="37" status="PASS">
+        <test-method signature="checkstatus()[pri:0, instance:signUp.OpenNewaccount@576f63f6]" started-at="2024-11-05T23:37:49 AST" name="checkstatus" finished-at="2024-11-05T23:37:49 AST" duration-ms="37" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkstatus -->
-        <test-method signature="registrationPage()[pri:0, instance:signUp.Mainpage@69653e16]" started-at="2024-11-03T22:38:55 AST" name="registrationPage" finished-at="2024-11-03T22:38:55 AST" duration-ms="815" status="PASS">
+        <test-method signature="registrationPage()[pri:0, instance:signUp.OpenNewaccount@576f63f6]" started-at="2024-11-05T23:37:49 AST" name="registrationPage" finished-at="2024-11-05T23:37:49 AST" duration-ms="467" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- registrationPage -->
-        <test-method signature="testOnly()[pri:0, instance:signUp.Mainpage@69653e16]" started-at="2024-11-03T22:38:55 AST" name="testOnly" finished-at="2024-11-03T22:38:55 AST" duration-ms="43" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testOnly -->
-        <test-method signature="testSuite()[pri:0, instance:signUp.Mainpage@69653e16]" started-at="2024-11-03T22:38:55 AST" name="testSuite" finished-at="2024-11-03T22:38:57 AST" duration-ms="1563" status="PASS">
+        <test-method signature="testSuite()[pri:0, instance:signUp.OpenNewaccount@576f63f6]" started-at="2024-11-05T23:37:49 AST" name="testSuite" finished-at="2024-11-05T23:37:51 AST" duration-ms="1667" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testSuite -->
-        <test-method signature="loginTest()[pri:4, instance:signUp.Mainpage@69653e16]" started-at="2024-11-03T22:38:57 AST" name="loginTest" finished-at="2024-11-03T22:39:01 AST" duration-ms="3851" status="PASS">
+        <test-method signature="loginTest()[pri:4, instance:signUp.OpenNewaccount@576f63f6]" started-at="2024-11-05T23:37:51 AST" name="loginTest" finished-at="2024-11-05T23:37:54 AST" duration-ms="3221" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginTest -->
-      </class> <!-- signUp.Mainpage -->
+        <test-method signature="navigate()[pri:6, instance:signUp.OpenNewaccount@576f63f6]" started-at="2024-11-05T23:37:54 AST" name="navigate" finished-at="2024-11-05T23:37:57 AST" duration-ms="2599" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigate -->
+        <test-method signature="selectAccountType()[pri:7, instance:signUp.OpenNewaccount@576f63f6]" started-at="2024-11-05T23:37:57 AST" name="selectAccountType" finished-at="2024-11-05T23:38:03 AST" duration-ms="6250" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- selectAccountType -->
+        <test-method signature="cheackStatus()[pri:8, instance:signUp.OpenNewaccount@576f63f6]" started-at="2024-11-05T23:38:03 AST" name="cheackStatus" finished-at="2024-11-05T23:38:05 AST" duration-ms="1654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cheackStatus -->
+      </class> <!-- signUp.OpenNewaccount -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

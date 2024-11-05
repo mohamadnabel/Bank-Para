@@ -11,7 +11,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class Mainpage extends Parameters {
-	WebDriver driver = new ChromeDriver();
 	String URL = "https://parabank.parasoft.com/parabank";
 
 	@BeforeTest
@@ -19,16 +18,6 @@ public class Mainpage extends Parameters {
 
 		driver.get(URL);
 		driver.manage().window().maximize();
-	}
-
-	@Test
-	public void testOnly() {
-		List<WebElement> listTest = driver.findElements(By.cssSelector(".leftmenu"));
-		System.out.println(listTest);
-		for (int i = 0; i < listTest.size(); i++) {
-			System.out.println(listTest.get(i).getText());
-		}
-
 	}
 
 //	Test Case 1: Open Registration Page
@@ -42,11 +31,12 @@ public class Mainpage extends Parameters {
 //	Test Case 2: Fill Registration Form with Valid Data
 
 	String usernamelog = usernames[rand.nextInt(usernames.length)] + rand.nextInt(99);
+
 	String pass = "mohammad123456";
 
 	@Test(invocationCount = 1, enabled = true)
 	public void testSuite() {
-
+		System.out.println(usernamelog);
 		WebElement firstName = driver.findElement(By.id("customer.firstName"));
 		WebElement lastName = driver.findElement(By.id("customer.lastName"));
 		WebElement addressStreet = driver.findElement(By.id("customer.address.street"));
@@ -108,5 +98,4 @@ public class Mainpage extends Parameters {
 		driver.findElement(By.cssSelector("input[value='Log In']")).click();
 
 	}
-
 }
