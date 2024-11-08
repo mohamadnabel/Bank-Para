@@ -3,12 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="signUp.OpenNewaccount">
+      <class name="signUp.TransferFunds">
         <methods>
           <include name="selectAccountType"/>
+          <include name="cheackStatus"/>
+          <include name="transferFunds"/>
           <include name="setUp"/>
         </methods>
-      </class> <!-- signUp.OpenNewaccount -->
+      </class> <!-- signUp.TransferFunds -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

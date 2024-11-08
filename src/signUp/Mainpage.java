@@ -22,7 +22,7 @@ public class Mainpage extends Parameters {
 
 //	Test Case 1: Open Registration Page
 
-	@Test
+	@Test(priority = 1)
 	public void registrationPage() {
 		WebElement registerButton = driver.findElement(By.cssSelector("a[href='register.htm']"));
 		registerButton.click();
@@ -34,7 +34,7 @@ public class Mainpage extends Parameters {
 
 	String pass = "mohammad123456";
 
-	@Test(invocationCount = 1, enabled = true)
+	@Test(priority = 2)
 	public void testSuite() {
 		System.out.println(usernamelog);
 		WebElement firstName = driver.findElement(By.id("customer.firstName"));
@@ -67,7 +67,7 @@ public class Mainpage extends Parameters {
 	}
 
 //	Test Case 3: signUp successfully status
-	@Test
+	@Test(priority = 3)
 	public void checkstatus() throws InterruptedException {
 		WebElement messageElement = driver.findElement(By.cssSelector("div[id='rightPanel'] p"));
 
@@ -85,7 +85,7 @@ public class Mainpage extends Parameters {
 
 //	Test Case 4: Initial Login
 	@Test(priority = 4)
-	public void loginTest() {
+	public void loginTest() throws InterruptedException {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(9));
 		driver.findElement(By.cssSelector("a[href='logout.htm']")).click();
 
@@ -96,6 +96,8 @@ public class Mainpage extends Parameters {
 		password.sendKeys(pass);
 
 		driver.findElement(By.cssSelector("input[value='Log In']")).click();
+		Thread.sleep(2000);
+
 
 	}
 }
